@@ -2,7 +2,7 @@
 
 This isn't a portfolio. It's not polished. It's a bunch of half-wild, half-inspired prototypes born from random obsessions, historical rabbit holes, and the occasional panic about job interviews.
 
-I woke up once at 3 am thinking about internal control matrices like some haunted version of Giordano Bruno meets Saul Goodman. That led to a script. Then another. Then a folder. The rest followed—accidentally, inevitably.
+I woke up once at 3 am thinking about internal control matrices like some haunted version of Giordano Bruno meets Saul Goodman. That led to a script. Then another. Then a folder. The rest followed-accidentally, inevitably.
 
 ## What's In Here?
 
