@@ -17,12 +17,12 @@ It's all stitched together by whatever Marcus Aurelius, Hideo Kojima, and Jack L
 
 ## Why?
 
-Because sometimes I chase story ideas like Jason Bourne chases car keys in Paris.
-Because the Republic of Venice still whispers.
-Because Barisan of Ibelin said "hold the line", and I took it literally in my Python loops.
-Because Giordano Bruno once dreamed of infinite worlds, and I took that as permission to prototype one on a Sunday.
-Because Jules Verne made underwater exploration sound poetic, and I've been trying to map it in SQL ever since.
-Because Marcus Aurelius kept talking about going upstream, and I keep clicking "New Branch".
+- Because sometimes I chase story ideas like Jason Bourne chases car keys in Paris.
+- Because the Republic of Venice still whispers.
+- Because Barisan of Ibelin said "hold the line", and I took it literally in my Python loops.
+- Because Giordano Bruno once dreamed of infinite worlds, and I took that as permission to prototype one on a Sunday.
+- Because Jules Verne made underwater exploration sound poetic, and I've been trying to map it in SQL ever since.
+- Because Marcus Aurelius kept talking about going upstream, and I keep clicking "New Branch".
 
 Also: gamified logic checks help me sleep. So do maps of imagined oceans.
 
