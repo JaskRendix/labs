@@ -1,0 +1,192 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.decomposition import PCA
+from pathlib import Path
+import numpy as np
+
+
+def inspect_data(file_path: Path) -> None:
+    import pandas as pd
+
+    try:
+        if file_path.suffix == ".csv":
+            df = pd.read_csv(file_path)
+            print("CSV loaded successfully.\n")
+            print("Head of the dataset:")
+            print(df.head(), "\n")
+            print("Shape of dataset:", df.shape)
+            print("Column names:", df.columns.tolist(), "\n")
+            print("Data types:")
+            print(df.dtypes, "\n")
+            print("Unique values per column:")
+            for col in df.columns:
+                unique_vals = df[col].unique()
+                print(f"  {col}: {len(unique_vals)} unique values")
+                if len(unique_vals) <= 10:
+                    print(f"    Sample values: {unique_vals[:5]}")
+            print()
+            missing = df.isnull().sum()
+            print("Missing values:")
+            print(
+                missing[missing > 0] if missing.sum() > 0 else "  No missing values.\n"
+            )
+            print("Descriptive stats for numerical columns:")
+            print(df.describe(), "\n")
+            print("Random samples:")
+            print(df.sample(3), "\n")
+        elif file_path.suffix == ".npy":
+            arr = np.load(file_path)
+            print("NPY loaded successfully. Shape:", arr.shape, "\n")
+            print("Sample values:", arr[:5])
+        else:
+            raise ValueError("Unsupported file type")
+    except Exception as e:
+        print("Error loading file:", e)
+        return
+
+
+# Options: "pca_dots", "loadings", "spectra", "mean_spectra", "diff_spectrum", "heatmap", "pca_dots_with_mixture"
+ACTION: str = "pca_dots"
+INSPECT: bool = True
+
+data_dir = Path(__file__).parent / "data"
+wine_ftir = data_dir / "Wine_FTIR_Triplicate_Spectra.csv"
+mixture_spectrum_path = data_dir / "mixture_spectrum.npy"
+components_path = data_dir / "components.npy"  # No longer used, but kept for context
+
+if not wine_ftir.exists():
+    raise FileNotFoundError(f"Missing file: {wine_ftir}")
+
+# Check if the mixture_spectrum file exists. If not, create a synthetic one.
+if not mixture_spectrum_path.exists():
+    print("Synthetic mixture_spectrum.npy not found. Generating a new one.")
+    df_temp = pd.read_csv(wine_ftir)
+    cab_cols = [c for c in df_temp.columns if "Cab" in c]
+    syr_cols = [c for c in df_temp.columns if "Syr" in c]
+    cab_mean = df_temp[cab_cols].mean(axis=1)
+    syr_mean = df_temp[syr_cols].mean(axis=1)
+    synthetic_mixture = (cab_mean.values + syr_mean.values) / 2
+    np.save(mixture_spectrum_path, synthetic_mixture)
+    print(f"Generated synthetic mixture_spectrum.npy at {mixture_spectrum_path}\n")
+
+# Load and prepare data
+df = pd.read_csv(wine_ftir)
+if INSPECT:
+    inspect_data(wine_ftir)
+    inspect_data(mixture_spectrum_path)
+    if components_path.exists():
+        inspect_data(components_path)
+
+wavenumbers = df["Wavenumbers"].values
+spectra = df.drop(columns="Wavenumbers").T
+labels = spectra.index.to_series().apply(
+    lambda name: "Cabernet" if "Cab" in name else "Shiraz"
+)
+
+# This PCA model is now used for all PCA-related actions
+pca = PCA(n_components=2)
+components = pca.fit_transform(spectra.values)
+
+if ACTION == "pca_dots":
+    plt.figure(figsize=(8, 6))
+    for wine_type in ["Cabernet", "Shiraz"]:
+        idx = labels == wine_type
+        plt.scatter(components[idx, 0], components[idx, 1], label=wine_type, alpha=0.7)
+    plt.xlabel("PC1")
+    plt.ylabel("PC2")
+    plt.title("PCA Scatter: Cabernet vs Shiraz")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+elif ACTION == "pca_dots_with_mixture":
+    mixture_spectrum = np.load(mixture_spectrum_path)
+    mixture_spectrum_reshaped = mixture_spectrum.reshape(1, -1)
+    mixture_component = pca.transform(mixture_spectrum_reshaped)
+
+    plt.figure(figsize=(8, 6))
+    for wine_type in ["Cabernet", "Shiraz"]:
+        idx = labels == wine_type
+        plt.scatter(components[idx, 0], components[idx, 1], label=wine_type, alpha=0.7)
+
+    plt.scatter(
+        mixture_component[0, 0],
+        mixture_component[0, 1],
+        label="Mixture",
+        color="red",
+        marker="X",
+        s=150,
+        zorder=5,
+    )
+
+    plt.xlabel("PC1")
+    plt.ylabel("PC2")
+    plt.title("PCA Scatter: Cabernet vs Shiraz with a New Mixture Sample")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+elif ACTION == "loadings":
+    pc1_loadings = pca.components_[0]
+    pc2_loadings = pca.components_[1]
+    plt.figure(figsize=(10, 5))
+    plt.plot(wavenumbers, pc1_loadings, label="PC1 Loadings (from data)")
+    plt.plot(wavenumbers, pc2_loadings, label="PC2 Loadings (from data)")
+    plt.xlabel("Wavenumber (cm⁻¹)")
+    plt.ylabel("Loading Weight")
+    plt.title("PCA Loadings Across FTIR Spectrum")
+    plt.legend()
+    plt.gca().invert_xaxis()
+    plt.tight_layout()
+    plt.show()
+
+elif ACTION == "spectra":
+    chosen_samples = ["Wine_01_Cab_Rep1", "Wine_36_Syr_Rep1"]
+    plt.figure(figsize=(10, 5))
+    for name in chosen_samples:
+        plt.plot(wavenumbers, df[name].values, label=name)
+    plt.xlabel("Wavenumber (cm⁻¹)")
+    plt.ylabel("Absorbance")
+    plt.title("Selected FTIR Spectra")
+    plt.legend()
+    plt.gca().invert_xaxis()
+    plt.tight_layout()
+    plt.show()
+
+elif ACTION == "mean_spectra":
+    cab_cols = [c for c in df.columns if "Cab" in c]
+    syr_cols = [c for c in df.columns if "Syr" in c]
+    cab_mean = df[cab_cols].mean(axis=1)
+    syr_mean = df[syr_cols].mean(axis=1)
+    plt.plot(wavenumbers, cab_mean, label="Cabernet Mean")
+    plt.plot(wavenumbers, syr_mean, label="Shiraz Mean")
+    plt.xlabel("Wavenumber (cm⁻¹)")
+    plt.ylabel("Mean Absorbance")
+    plt.title("Mean FTIR Spectra: Cabernet vs Shiraz")
+    plt.legend()
+    plt.gca().invert_xaxis()
+    plt.tight_layout()
+    plt.show()
+
+elif ACTION == "diff_spectrum":
+    cab_cols = [c for c in df.columns if "Cab" in c]
+    syr_cols = [c for c in df.columns if "Syr" in c]
+    cab_mean = df[cab_cols].mean(axis=1)
+    syr_mean = df[syr_cols].mean(axis=1)
+    diff = cab_mean - syr_mean
+    plt.plot(wavenumbers, diff)
+    plt.xlabel("Wavenumber (cm⁻¹)")
+    plt.ylabel("Absorbance Difference")
+    plt.title("Spectral Difference: Cabernet - Shiraz")
+    plt.gca().invert_xaxis()
+    plt.tight_layout()
+    plt.show()
+
+elif ACTION == "heatmap":
+    sns.heatmap(spectra.values, cmap="magma", xticklabels=50)
+    plt.title("FTIR Spectra Heatmap")
+    plt.xlabel("Wavenumbers")
+    plt.ylabel("Wine Samples")
+    plt.tight_layout()
+    plt.show()
