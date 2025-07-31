@@ -23,10 +23,8 @@ This repo is the result of that rabbit hole. It's a mixture of science, impulse,
 
 ## Files of Interest
 
-- `spectra_analysis.py` - the script born from curiosity and possibly sleep deprivation  
-- `Wine_FTIR_Triplicate_Spectra.csv` - 111 spectra across 37 wines (triplicate samples per bottle)  
-- `mixture_spectrum.npy` - a synthesized blend of Cabernet and Shiraz, for experimental kicks  
-- `components.npy` - once used for PCA, now just taking up space like unopened wine
+- `spectra_analysis.py` - the script born from curiosity and possibly sleep deprivation
+- `Wine_FTIR_Triplicate_Spectra.csv` - 111 spectra across 37 wines (triplicate samples per bottle)
 
 ---
 
