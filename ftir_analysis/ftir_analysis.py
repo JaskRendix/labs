@@ -46,37 +46,23 @@ def inspect_data(file_path: Path) -> None:
         return
 
 
-# Options: "pca_dots", "loadings", "spectra", "mean_spectra", "diff_spectrum", "heatmap", "pca_dots_with_mixture"
-ACTION: str = "pca_dots"
-INSPECT: bool = True
+# Options: "pca_dots", "loadings", "spectra", "mean_spectra", "diff_spectrum", "heatmap"
+ACTION: str = "pca_dots" # Default action, can be changed by user
+INSPECT: bool = True # Flag to control data inspection
 
 data_dir = Path(__file__).parent / "data"
 wine_ftir = data_dir / "Wine_FTIR_Triplicate_Spectra.csv"
-mixture_spectrum_path = data_dir / "mixture_spectrum.npy"
-components_path = data_dir / "components.npy"  # No longer used, but kept for context
+
 
 if not wine_ftir.exists():
     raise FileNotFoundError(f"Missing file: {wine_ftir}")
 
-# Check if the mixture_spectrum file exists. If not, create a synthetic one.
-if not mixture_spectrum_path.exists():
-    print("Synthetic mixture_spectrum.npy not found. Generating a new one.")
-    df_temp = pd.read_csv(wine_ftir)
-    cab_cols = [c for c in df_temp.columns if "Cab" in c]
-    syr_cols = [c for c in df_temp.columns if "Syr" in c]
-    cab_mean = df_temp[cab_cols].mean(axis=1)
-    syr_mean = df_temp[syr_cols].mean(axis=1)
-    synthetic_mixture = (cab_mean.values + syr_mean.values) / 2
-    np.save(mixture_spectrum_path, synthetic_mixture)
-    print(f"Generated synthetic mixture_spectrum.npy at {mixture_spectrum_path}\n")
 
 # Load and prepare data
 df = pd.read_csv(wine_ftir)
 if INSPECT:
     inspect_data(wine_ftir)
-    inspect_data(mixture_spectrum_path)
-    if components_path.exists():
-        inspect_data(components_path)
+
 
 wavenumbers = df["Wavenumbers"].values
 spectra = df.drop(columns="Wavenumbers").T
@@ -96,33 +82,6 @@ if ACTION == "pca_dots":
     plt.xlabel("PC1")
     plt.ylabel("PC2")
     plt.title("PCA Scatter: Cabernet vs Shiraz")
-    plt.legend()
-    plt.tight_layout()
-    plt.show()
-
-elif ACTION == "pca_dots_with_mixture":
-    mixture_spectrum = np.load(mixture_spectrum_path)
-    mixture_spectrum_reshaped = mixture_spectrum.reshape(1, -1)
-    mixture_component = pca.transform(mixture_spectrum_reshaped)
-
-    plt.figure(figsize=(8, 6))
-    for wine_type in ["Cabernet", "Shiraz"]:
-        idx = labels == wine_type
-        plt.scatter(components[idx, 0], components[idx, 1], label=wine_type, alpha=0.7)
-
-    plt.scatter(
-        mixture_component[0, 0],
-        mixture_component[0, 1],
-        label="Mixture",
-        color="red",
-        marker="X",
-        s=150,
-        zorder=5,
-    )
-
-    plt.xlabel("PC1")
-    plt.ylabel("PC2")
-    plt.title("PCA Scatter: Cabernet vs Shiraz with a New Mixture Sample")
     plt.legend()
     plt.tight_layout()
     plt.show()
