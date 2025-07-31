@@ -23,7 +23,7 @@ This repo is the result of that rabbit hole. It's a mixture of science, impulse,
 
 ## Files of Interest
 
-- `spectra_analysis.py` - the script born from curiosity and possibly sleep deprivation
+- `ftir_analysis.py` - the script born from curiosity and possibly sleep deprivation
 - `Wine_FTIR_Triplicate_Spectra.csv` - 111 spectra across 37 wines (triplicate samples per bottle)
 
 ---
