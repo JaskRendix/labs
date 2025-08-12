@@ -51,31 +51,31 @@ Visualizing how each payment method evolved between 2019 and 2025 across NYC nei
 
 ### Flex Fare
 A quiet revolution. From fringe to a significant feature.
-![Flex Fare Shift](output_change_in_proportions/change_payment_type_0_Flex_Fare.png)
+![Flex Fare Shift](images/change_payment_type_0_Flex_Fare.png)
 
 ---
 
 ### Credit Card
 Still dominant, but not untouched. Some zones saw dramatic swings.
-![Credit Card Shift](output_change_in_proportions/change_payment_type_1_Credit_Card.png)
+![Credit Card Shift](images/change_payment_type_1_Credit_Card.png)
 
 ---
 
 ### Cash
 The decline of the tangible. A farewell to folded bills.
-![Cash Shift](output_change_in_proportions/change_payment_type_2_Cash.png)
+![Cash Shift](images/change_payment_type_2_Cash.png)
 
 ---
 
 ### No Charge
 Free rides—or accounting ghosts? A curious uptick.
-![No Charge Shift](output_change_in_proportions/change_payment_type_3_No_Charge.png)
+![No Charge Shift](images/change_payment_type_3_No_Charge.png)
 
 ---
 
 ### Dispute
 When the meter runs and the argument begins.
-![Dispute Shift](output_change_in_proportions/change_payment_type_4_Dispute.png)
+![Dispute Shift](images/change_payment_type_4_Dispute.png)
 
 ---
 
