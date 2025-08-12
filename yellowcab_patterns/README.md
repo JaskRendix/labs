@@ -72,6 +72,7 @@ min       0.01
 75%      13.50
 max   623,259.90
 ```
+![Fare Distribution](images/fare_distribution.png)
 
 **Null Values:**
 ```
@@ -84,7 +85,7 @@ airport_fee             7,680,635
 
 ---
 
-### 🕒 Hourly Trip Counts (Top 5)
+### Hourly Trip Counts (Top 5)
 ```
 Hour  | Trip Count
 ------|------------
@@ -94,6 +95,21 @@ Hour  | Trip Count
 3     | 77,790
 4     | 61,112
 ```
+![Hourly Trip Counts](images/trip_counts_by_hour.png)
+
+---
+
+### Fare vs Duration
+Some rides are long and cheap. Some are short and expensive. Some defy logic.
+
+![Fare vs Duration](images/fare_vs_duration.png)
+
+---
+
+### Rush Hour Heatmap
+When the city pulses hardest.
+
+![Rush Hour Heatmap](images/rush_hour_heatmap.png)
 
 ---
 
@@ -109,6 +125,8 @@ Hour  | Trip Count
 Saved to:  
 `output/suspicious_trips.csv`
 
+![Suspicious Trip Breakdown](images/suspicious_trip_breakdown.png)
+
 ---
 
 ### Shift Summary (Sample)
@@ -118,6 +136,7 @@ Saved to:
 | 2019-01-16 08:00:00 | 31    | 604.50        | 493.7               | 226.3            |
 | 2019-01-17 08:00:00 | 28    | 469.69        | 469.2               | 250.8            |
 
+![Top Pickup Zones](images/top_pickup_zones.png)
 ---
 
 ## Actions Available
