@@ -84,51 +84,6 @@ def plot_trip_distance_histogram(
     plt.close()
 
 
-def plot_tip_vs_fare(
-    df_2019: pd.DataFrame, df_2025: pd.DataFrame, output_path: Path
-) -> None:
-    print(f"\nTip vs Fare Summary:")
-    print(
-        f"2019 - Avg Tip: ${df_2019['tip_amount'].mean():.2f}, Avg Fare: ${df_2019['fare_amount'].mean():.2f}"
-    )
-    print(
-        f"2025 - Avg Tip: ${df_2025['tip_amount'].mean():.2f}, Avg Fare: ${df_2025['fare_amount'].mean():.2f}"
-    )
-
-    fig, axes = plt.subplots(1, 2, figsize=(16, 7), sharex=True, sharey=True)
-
-    fig.suptitle("Tip Amount vs. Fare Amount (2019 vs 2025)", fontsize=16, y=1.02)
-
-    sns.scatterplot(
-        ax=axes[0],
-        data=df_2019[df_2019["tip_amount"] < 50],
-        x="fare_amount",
-        y="tip_amount",
-        alpha=0.5,
-        color="salmon",
-    )
-    axes[0].set_title("2019")
-    axes[0].set_xlabel("Fare Amount ($)")
-    axes[0].set_ylabel("Tip Amount ($)")
-
-    sns.scatterplot(
-        ax=axes[1],
-        data=df_2025[df_2025["tip_amount"] < 50],
-        x="fare_amount",
-        y="tip_amount",
-        alpha=0.5,
-        color="steelblue",
-    )
-    axes[1].set_title("2025")
-    axes[1].set_xlabel("Fare Amount ($)")
-    axes[1].set_ylabel("Tip Amount ($)")
-
-    plt.tight_layout()
-
-    plt.savefig(output_path / "tip_vs_fare_comparison.png")
-    plt.close()
-
-
 def plot_hourly_trip_counts(
     df_2019: pd.DataFrame, df_2025: pd.DataFrame, output_path: Path
 ) -> None:
@@ -356,3 +311,4 @@ def plot_label_distribution(df: pd.DataFrame, output_path: Path, year: int) -> N
     plt.tight_layout()
     plt.savefig(output_path / f"label_distribution_bar_chart_{year}.png")
     plt.close()
+
