@@ -1,6 +1,10 @@
 # NYC Yellow Taxi Trip Analysis
 
-???
+The first script in the `yellow_cab_patterns` project really got under my skin, in a good way. I couldn't stop thinking about the dataset, even waking up with it still buzzing in my head. That's usually a sign that something deeper is waiting to be uncovered. Honestly, it felt like the idea came to me in a dream, well, at least two dreams. This was the first one.
+
+I wanted to move beyond just profiling the data and start exploring how things change over time. That shift opened up a whole new layer of insight. What better lens than payment behavior across different zones? It gave me a way to track evolving consumer habits and urban mobility patterns. And by pulling in the zone lookup file, I could finally give names to those mysterious location IDs, turning raw data into something more human and relatable.
+
+It felt like raising the bar: not just crunching numbers, but telling a story about how people move, pay, and live in the city. And that's when things started to get really interesting.
 
 ---
 
@@ -81,11 +85,12 @@ When the meter runs and the argument begins.
 
 ## Why It Exists
 
-???
+It exists because one dataset led to another question, and then another. While working on a different script, I stumbled into something that wouldn't let go. I kept wondering: *What's really changing in the way people move through the city?* That curiosity turned into a chase, and this script became the first step in trying to answer it. It's what happens when data stops being just numbers and starts whispering stories.
 
 ---
 
 ## What's Next?
 
-???
+There's another dream waiting. The first one was about payment behavior, how people pay, where they pay, and how that's shifting. The next might be about *when* they travel, *how far*, or *how long*. Maybe it's about tipping culture, or maybe it's something I haven't seen yet. But the questions are there, and the data's still talking. Time to listen again.
 
+I don't know why, but every time I write *maybe*, Dignam from *The Departed* haunts me. That voice, that edge, it's like he's daring me to stop guessing and start digging. So yeah, maybe it's time to find out.
