@@ -39,10 +39,6 @@ Trip data from the [NYC Taxi & Limousine Commission](https://www.nyc.gov/site/tl
 ![Trip Distance Distribution](images/trip_distance_distribution.png)  
 *Compares the distribution of trip distances in 2019 and 2025.*
 
-### Tip vs Fare Comparison  
-![Tip vs Fare Comparison](images/tip_vs_fare_comparison.png)  
-*Shows the relationship between fare amount and tip amount for both years.*
-
 ### Hourly Trip Counts  
 ![Hourly Trip Counts](images/hourly_trip_counts.png)  
 *Displays the number of trips taken each hour of the day for both 2019 and 2025.*
