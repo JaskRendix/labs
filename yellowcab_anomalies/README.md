@@ -53,10 +53,6 @@ Trip data from the [NYC Taxi & Limousine Commission](https://www.nyc.gov/site/tl
 
 ---
 
-### Anomaly Feature Pair Plot  
-![Anomaly Feature Pair Plot](images/anomaly_feature_pair_plot.png)  
-*Distribution of anomalous trips across features like duration, distance, fare, and speed.*
-
 ### Total Anomaly Trend  
 ![Total Anomaly Trend](images/total_anomaly_trend.png)  
 *Compares the overall percentage of suspicious trips between 2019 and 2025.*
@@ -81,10 +77,6 @@ Trip data from the [NYC Taxi & Limousine Commission](https://www.nyc.gov/site/tl
 ![Suspicious Time Heatmap 2025](images/suspicious_time_heatmap_2025.png)  
 *Hourly and weekday pattern of suspicious trips in 2025.*
 
-### Fare vs Distance (Suspicious Trips)  
-![Fare vs Distance Suspicious](images/fare_vs_distance_suspicious.png)  
-*Scatter plot of fare vs distance, color-coded by type of anomaly.*
-
 ---
 
 ### Top Suspicious Zones (2019)  
@@ -94,14 +86,6 @@ Trip data from the [NYC Taxi & Limousine Commission](https://www.nyc.gov/site/tl
 ### Top Suspicious Zones (2025)  
 ![Top Suspicious Zones 2025](images/top_suspicious_zones_2025.png)  
 *Top suspicious pickup zones in 2025.*
-
-### Top Suspicious Drivers (2019)  
-![Top Suspicious Drivers 2019](images/top_suspicious_drivers_2019.png)  
-*Drivers with the highest number of suspicious trips in 2019.*
-
-### Top Suspicious Drivers (2025)  
-![Top Suspicious Drivers 2025](images/top_suspicious_drivers_2025.png)  
-*Drivers with the most suspicious trips in 2025.*
 
 ---
 
