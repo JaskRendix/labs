@@ -15,7 +15,6 @@ from visualization import (
     plot_suspicious_fare_distribution,
     plot_suspicious_speed_distribution,
     plot_suspicious_time_heatmap,
-    plot_tip_vs_fare,
     plot_top_suspicious_zones,
     plot_total_anomaly_trend,
     plot_trip_distance_histogram,
@@ -105,7 +104,6 @@ def main() -> None:
 
         print("\n--- Generating New General Plots ---")
         plot_trip_distance_histogram(df_2019_cleaned, df_2025_cleaned, output_path)
-        plot_tip_vs_fare(df_2019_cleaned, df_2025_cleaned, output_path)
         plot_hourly_trip_counts(df_2019_cleaned, df_2025_cleaned, output_path)
         plot_average_duration_by_weekday(df_2019_cleaned, df_2025_cleaned, output_path)
 
@@ -168,3 +166,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
