@@ -311,4 +311,3 @@ def plot_label_distribution(df: pd.DataFrame, output_path: Path, year: int) -> N
     plt.tight_layout()
     plt.savefig(output_path / f"label_distribution_bar_chart_{year}.png")
     plt.close()
-

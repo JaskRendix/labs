@@ -1,9 +1,10 @@
-import pandas as pd
+from pathlib import Path
+
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import seaborn as sns
 from sklearn.decomposition import PCA
-from pathlib import Path
-import numpy as np
 
 
 def inspect_data(file_path: Path) -> None:
@@ -47,8 +48,8 @@ def inspect_data(file_path: Path) -> None:
 
 
 # Options: "pca_dots", "loadings", "spectra", "mean_spectra", "diff_spectrum", "heatmap"
-ACTION: str = "pca_dots" # Default action, can be changed by user
-INSPECT: bool = True # Flag to control data inspection
+ACTION: str = "pca_dots"  # Default action, can be changed by user
+INSPECT: bool = True  # Flag to control data inspection
 
 data_dir = Path(__file__).parent / "data"
 wine_ftir = data_dir / "Wine_FTIR_Triplicate_Spectra.csv"

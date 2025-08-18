@@ -1,18 +1,19 @@
-import numpy as np
+from collections import Counter
 from pathlib import Path
-from PIL import Image
-import pandas as pd
+
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import plotly.express as px
 import seaborn as sns
-from sklearn.decomposition import PCA
-from sklearn.cluster import KMeans, AgglomerativeClustering
-from sklearn.manifold import TSNE
 import umap.umap_ as umap
 from hdbscan import HDBSCAN
-from collections import Counter
-import plotly.express as px
-from sklearn.metrics import silhouette_score
+from PIL import Image
 from scipy.cluster.hierarchy import dendrogram, linkage
+from sklearn.cluster import AgglomerativeClustering, KMeans
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
+from sklearn.metrics import silhouette_score
 from sklearn.metrics.pairwise import euclidean_distances
 
 # --- Tuxemon Image Analysis Actions ---
