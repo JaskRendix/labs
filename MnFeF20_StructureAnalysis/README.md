@@ -92,4 +92,4 @@ If curiosity keeps winning:
 - Build a Streamlit dashboard to visualize coordination shells interactively, peeling back layers like an archaeologist of geometry.
 - Extend to neutron diffraction or PDF analysis for amorphous systems, where the rules dissolve and the atoms improvise.
 
-In the meantime, clone it, run it, rotate the unit cell, and maybe annotate a few peaks while sipping something crystalline. Not gin. Not air. A piña colada with Robert Holmes, somewhere between a Victorian murder mystery and a crystallographic fever dream.
+In the meantime, clone it, run it, rotate the unit cell, and maybe annotate a few peaks while sipping something crystalline. Not gin. Not air. A piña colada with Rupert Holmes, somewhere between a Victorian murder mystery and a crystallographic fever dream.
