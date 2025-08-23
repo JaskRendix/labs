@@ -1,0 +1,14 @@
+num_facets:
+  value: 499992 vs 499994
+volume:
+  value: 1770.0086263020833 vs 5254.8671875
+surface_area:
+  value: 918.9071044921875 vs 3115.6904296875
+bounding_box:
+  x: (np.float32(0.0), np.float32(15.470657)) vs (np.float32(0.0), np.float32(21.811127))
+  y: (np.float32(0.0), np.float32(19.999771)) vs (np.float32(0.0), np.float32(44.800034))
+  z: (np.float32(0.0), np.float32(16.09401)) vs (np.float32(0.0), np.float32(38.32632))
+center_of_mass:
+  value: [7.53, 8.79, 8.63] vs [11.05, 17.86, 18.12]
+is_symmetric_x:
+  value: False vs False

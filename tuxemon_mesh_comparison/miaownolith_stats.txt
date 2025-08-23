@@ -1,0 +1,9 @@
+num_facets: 499994
+volume: 5254.87
+surface_area: 3115.6904296875
+bounding_box:
+  x: (np.float32(0.0), np.float32(21.811127))
+  y: (np.float32(0.0), np.float32(44.800034))
+  z: (np.float32(0.0), np.float32(38.32632))
+center_of_mass: [11.05, 17.86, 18.12]
+is_symmetric_x: False
