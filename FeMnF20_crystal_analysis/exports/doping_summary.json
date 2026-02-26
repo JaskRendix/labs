@@ -1,0 +1,38 @@
+[
+    {
+        "Dopant": "Co",
+        "Fraction (%)": 5,
+        "Density (g/cm\u00b3)": 2.9056,
+        "Formula": "Mn3Fe4CoH16(O2F5)4"
+    },
+    {
+        "Dopant": "Co",
+        "Fraction (%)": 10,
+        "Density (g/cm\u00b3)": 2.9056,
+        "Formula": "Mn3Fe4CoH16(O2F5)4"
+    },
+    {
+        "Dopant": "Co",
+        "Fraction (%)": 20,
+        "Density (g/cm\u00b3)": 2.9056,
+        "Formula": "Mn3Fe4CoH16(O2F5)4"
+    },
+    {
+        "Dopant": "Zn",
+        "Fraction (%)": 5,
+        "Density (g/cm\u00b3)": 2.925,
+        "Formula": "Mn3ZnFe4H16(O2F5)4"
+    },
+    {
+        "Dopant": "Zn",
+        "Fraction (%)": 10,
+        "Density (g/cm\u00b3)": 2.925,
+        "Formula": "Mn3ZnFe4H16(O2F5)4"
+    },
+    {
+        "Dopant": "Zn",
+        "Fraction (%)": 20,
+        "Density (g/cm\u00b3)": 2.925,
+        "Formula": "Mn3ZnFe4H16(O2F5)4"
+    }
+]

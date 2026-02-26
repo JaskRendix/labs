@@ -1,0 +1,22 @@
+front_view:
+  image_size:
+    width: 64
+    height: 64
+  area_px: 900.5
+  aspect_ratio: 1.0
+  dominant_color:
+    r: 0
+    g: 0
+    b: 0
+  num_contours: 1
+back_view:
+  image_size:
+    width: 64
+    height: 64
+  area_px: 126.5
+  aspect_ratio: 1.0
+  dominant_color:
+    r: 0
+    g: 0
+    b: 0
+  num_contours: 2

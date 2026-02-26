@@ -1,6 +1,7 @@
-import pandas as pd
-import numpy as np
 from datetime import datetime, timedelta
+
+import numpy as np
+import pandas as pd
 
 # -------------------------------
 # Generate synthetic users and roles
@@ -13,7 +14,7 @@ roles = [
     "Inventory Control",
     "Procurement",
     "Financial Reporting",
-    "System Administration"
+    "System Administration",
 ]
 
 user_roles = []
@@ -31,7 +32,7 @@ df_roles.to_csv("user_roles.csv", index=False)
 conflicts = [
     ("Payment Approval", "Vendor Management"),
     ("System Administration", "Financial Reporting"),
-    ("Procurement", "Inventory Control")
+    ("Procurement", "Inventory Control"),
 ]
 
 # -------------------------------
@@ -56,18 +57,24 @@ for user in users:
     num_logins = np.random.randint(1, 6)
     for _ in range(num_logins):
         days_ago = np.random.randint(0, 30)
-        time_offset = timedelta(days=days_ago, hours=np.random.randint(0, 24), minutes=np.random.randint(0, 60))
+        time_offset = timedelta(
+            days=days_ago,
+            hours=np.random.randint(0, 24),
+            minutes=np.random.randint(0, 60),
+        )
         timestamp = datetime.now() - time_offset
 
         ip = f"192.168.{np.random.randint(0,255)}.{np.random.randint(0,255)}"
         location = np.random.choice(["Zurich", "London", "New York", "Tokyo", "Sydney"])
 
-        login_data.append({
-            "user": user,
-            "timestamp": timestamp.strftime("%Y-%m-%d %H:%M:%S"),
-            "ip_address": ip,
-            "location": location
-        })
+        login_data.append(
+            {
+                "user": user,
+                "timestamp": timestamp.strftime("%Y-%m-%d %H:%M:%S"),
+                "ip_address": ip,
+                "location": location,
+            }
+        )
 
 df_logins = pd.DataFrame(login_data)
 df_logins.to_csv("user_login_events.csv", index=False)

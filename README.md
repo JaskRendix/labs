@@ -1,8 +1,8 @@
 # Labs – Curious Experiments and Late-Night Wanderings
 
-This isn't a portfolio. It's not polished. It's a bunch of half-wild, half-inspired prototypes born from random obsessions, historical rabbit holes, and the occasional panic about job interviews.
+This isn't a portfolio. It's not polished. It's a collection of half-wild, half-inspired prototypes born from random obsessions, historical rabbit holes, and the occasional panic about job interviews.
 
-I woke up once at 3 am thinking about internal control matrices like some haunted version of Giordano Bruno meets Saul Goodman. That led to a script. Then another. Then a folder. The rest followed-accidentally, inevitably.
+I once woke up at 3 am thinking about internal control matrices like some haunted fusion of Friar Faria tunneling out of Château d'If and Saul Goodman negotiating with a spreadsheet. That led to a script. Then another. Then a folder. The rest followed—accidentally, inevitably.
 
 ## What's In Here?
 
@@ -13,18 +13,18 @@ You'll find:
 - sci-fi sketches and asteroid mining what-ifs
 - surreal maps and psychogeographic experiments
 
-It's all stitched together by whatever Marcus Aurelius, Hideo Kojima, and Jack London would say to me if they were stuck on a Discord call with Indiana Jones during a figure skating gala inside a steampunk cathedral.
+It's all stitched together by whatever Maurice Blondel, Hideo Kojima, and Jack London might mutter if they were stuck on a Discord call with Indiana Jones during a figure skating gala inside a fridge.
 
 ## Why?
 
 - Because sometimes I chase story ideas like Jason Bourne chases car keys in Paris.
 - Because the Republic of Venice still whispers.
-- Because Barisan of Ibelin said "hold the line", and I took it literally in my Python loops.
-- Because Giordano Bruno once dreamed of infinite worlds, and I took that as permission to prototype one on a Sunday.
-- Because Jules Verne made underwater exploration sound poetic, and I've been trying to map it in SQL ever since.
-- Because Marcus Aurelius kept talking about going upstream, and I keep clicking "New Branch".
+- Because Leibniz believed the universe runs on elegant principles, and I keep trying to encode them in Python loops.
+ -Because Friar Faria taught me that even the most absurd escape plan starts with a sketch on a damp wall.
+- Because Voltaire insisted we cultivate our garden, and I took that as a mandate to cultivate simulations, datasets, and improbable SQL queries.
+- Because Virgil kept guiding wanderers through impossible landscapes, and I keep clicking "New Branch" like it's another canto.
 
-Also: gamified logic checks help me sleep. So do maps of imagined oceans.
+Also: gamified logic checks help me sleep. So do maps of imagined oceans (Waterworld).
 
 ## For Whom?
 

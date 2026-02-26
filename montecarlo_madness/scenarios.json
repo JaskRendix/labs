@@ -1,0 +1,26 @@
+{
+  "base": {
+    "cf_mean": 1500000,
+    "cf_std": 300000,
+    "exit_mean": 12000000,
+    "exit_std": 1000000
+  },
+  "optimistic": {
+    "cf_mean": 1800000,
+    "cf_std": 250000,
+    "exit_mean": 13000000,
+    "exit_std": 800000
+  },
+  "conservative": {
+    "cf_mean": 1200000,
+    "cf_std": 400000,
+    "exit_mean": 11000000,
+    "exit_std": 1200000
+  },
+  "chaotic": {
+    "cf_mean": 1500000,
+    "cf_std": 1000000,
+    "exit_mean": 12000000,
+    "exit_std": 3000000
+  }
+}
